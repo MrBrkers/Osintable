@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+   MS Office 2010 / Classic Desktop GUI Theme
+   ------------------------------------------------------------- */
+
+/* Classic Windows / Office font stack */
+body, button, input, select, textarea {
+  font-family: "Segoe UI", Tahoma, Arial, Helvetica, sans-serif;
+}
+
+/* Classic Ribbon Button Styles */
+.win-btn {
+  background: linear-gradient(180deg, #fefefe 0%, #e6e9ee 45%, #d6dbe2 50%, #c8ced7 100%);
+  border: 1px solid #7a8494;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #1a2233;
+}
+
+.win-btn:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #eaf2fb 45%, #d8e5f7 50%, #c4d7f2 100%);
+  border-color: #5583b8;
+  color: #0c1a30;
+}
+
+.win-btn:active, .win-btn-active {
+  background: linear-gradient(180deg, #c4d5ea 0%, #d8e6f7 50%, #eef5fc 100%);
+  border-color: #3d699e;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.win-btn-primary {
+  background: linear-gradient(180deg, #3d79b9 0%, #2b619d 45%, #23548b 50%, #1c4779 100%);
+  border: 1px solid #14355c;
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.win-btn-primary:hover {
+  background: linear-gradient(180deg, #4b89cc 0%, #3572b2 45%, #2a619d 50%, #205189 100%);
+  border-color: #0f2c4e;
+  color: #ffffff;
+}
+
+.win-btn-emerald {
+  background: linear-gradient(180deg, #349e6d 0%, #248154 45%, #1b6d45 50%, #155736 100%);
+  border: 1px solid #0d3e26;
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.win-btn-amber {
+  background: linear-gradient(180deg, #d9882a 0%, #be6d16 45%, #a65a0b 50%, #8c4a04 100%);
+  border: 1px solid #6b3500;
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Sunken panel for Status Bar and Recessed Canvas border */
+.win-sunken {
+  border-top: 1px solid #717785;
+  border-left: 1px solid #717785;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.win-raised {
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #717785;
+  border-bottom: 1px solid #717785;
+}
+
+/* Scrollbar classic desktop style */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e5ea;
+  border-left: 1px solid #c2c6cd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b2b8c2;
+  border: 1px solid #8e95a0;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa1ad;
+}

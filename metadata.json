@@ -1,0 +1,8 @@
+{
+  "name": "Osintablo",
+  "description": "Android ve masaüstü uyumlu, 2010\u0027lar klasik güvenlik ve istihbarat arayüzüne sahip Maltego tarzı OSINT araştırma, düğüm analizi ve ilişki haritalama yazılımı.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

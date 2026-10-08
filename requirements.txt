@@ -1,0 +1,5 @@
+# OsintDesk Python Desktop Requirements
+# Temel uygulama Python standart kütüphanesi (tkinter, json, csv, math, re, uuid) ile çalışır.
+# Harici zorunlu kütüphane yoktur.
+# İsteğe bağlı gelişmiş görsel dışa aktarma (PNG/JPEG) için:
+pillow>=10.0.0

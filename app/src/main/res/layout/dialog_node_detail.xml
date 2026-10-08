@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#eceff4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#20406b"
+        android:gravity="center_vertical"
+        android:paddingLeft="14dp">
+        <TextView
+            android:id="@+id/tv_detail_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Düğüm Özellikleri"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Varlık Adı / Etiket:"
+                android:textColor="#334155"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/et_detail_label"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#ffffff"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="13sp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Varlık Türü:"
+                android:textColor="#334155"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/sp_detail_type"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#ffffff"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="İstihbarat / Vaka Notları:"
+                android:textColor="#334155"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/et_detail_notes"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#ffffff"
+                android:gravity="top|left"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="14dp">
+                <Button android:id="@+id/btn_detail_connect" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:background="#2563eb" android:textColor="#ffffff" android:text="🔗 Bağla" android:textStyle="bold" android:layout_marginRight="6dp" />
+                <Button android:id="@+id/btn_detail_add_child" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:background="#059669" android:textColor="#ffffff" android:text="➕ Bağlı Ekle" android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <Button android:id="@+id/btn_detail_delete" android:layout_width="wrap_content" android:layout_height="40dp" android:background="#dc2626" android:textColor="#ffffff" android:text="🗑️ Sil" android:textStyle="bold" />
+                <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                <Button android:id="@+id/btn_detail_close" android:layout_width="wrap_content" android:layout_height="40dp" android:background="#94a3b8" android:textColor="#ffffff" android:text="Kapat" android:layout_marginRight="6dp" />
+                <Button android:id="@+id/btn_detail_save" android:layout_width="wrap_content" android:layout_height="40dp" android:background="#1e3a8a" android:textColor="#ffffff" android:textStyle="bold" android:text="Kaydet" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

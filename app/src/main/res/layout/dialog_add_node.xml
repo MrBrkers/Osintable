@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#eceff4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#20406b"
+        android:gravity="center_vertical"
+        android:paddingLeft="14dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="➕ Düğüm Ekle"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_parent_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#1d4ed8"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/cb_batch_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✨ Çoklu Ekleme Modu (Virgülle ayrılmış)"
+                android:textColor="#b45309"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Varlık / Düğüm Türü:"
+                android:textColor="#334155"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/sp_node_type"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#ffffff"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/tv_label_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Varlık adı / unvanı / değeri:"
+                android:textColor="#334155"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/et_node_label"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#ffffff"
+                android:hint="Örn: Ahmet Yılmaz"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/et_relation"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:hint="İlişki türü"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/et_notes"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:hint="Araştırma notları"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+                <Button android:id="@+id/btn_cancel_add" android:layout_width="wrap_content" android:layout_height="40dp" android:background="#94a3b8" android:textColor="#ffffff" android:text="İptal" android:layout_marginRight="8dp" />
+                <Button android:id="@+id/btn_submit_add" android:layout_width="wrap_content" android:layout_height="40dp" android:background="#2563eb" android:textColor="#ffffff" android:textStyle="bold" android:text="Ekle" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

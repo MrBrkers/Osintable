@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f5f8">
+
+    <!-- Top Action Bar -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#20406b"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:id="@+id/tv_app_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Maltego OSINT"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/btn_fit_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_crop"
+            android:contentDescription="Sığdır" />
+
+        <ImageButton
+            android:id="@+id/btn_zoom_in"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_add"
+            android:contentDescription="Sıfırla" />
+
+        <ImageButton
+            android:id="@+id/btn_zoom_out"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Merkeze Al" />
+    </LinearLayout>
+
+    <!-- Interactive Canvas Container -->
+    <FrameLayout
+        android:id="@+id/canvas_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/bottom_bar" />
+
+    <!-- 1-Second Hold Bar (Çoğalt ve Toplu Sil - SADECE 1 sn basılı tutulunca açılır!) -->
+    <LinearLayout
+        android:id="@+id/layout_hold_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/top_bar"
+        android:layout_marginTop="12dp"
+        android:background="#1e293b"
+        android:padding="6dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_hold_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#2563eb"
+            android:textColor="#ffffff"
+            android:text="1 Seçili"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginRight="6dp" />
+
+        <Button
+            android:id="@+id/btn_hold_duplicate"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="#334155"
+            android:textColor="#ffffff"
+            android:text="📋 Çoğalt"
+            android:textSize="11sp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_marginRight="4dp" />
+
+        <Button
+            android:id="@+id/btn_hold_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="#dc2626"
+            android:textColor="#ffffff"
+            android:text="🗑️ Sil"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_marginRight="4dp" />
+
+        <Button
+            android:id="@+id/btn_hold_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="#2563eb"
+            android:textColor="#ffffff"
+            android:text="🔗 Bağla"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_marginRight="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_hold_close"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Kapat" />
+    </LinearLayout>
+
+    <!-- Status Text -->
+    <TextView
+        android:id="@+id/tv_status_info"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_above="@id/bottom_bar"
+        android:background="#dbe1e8"
+        android:textColor="#475569"
+        android:textSize="10sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Düğümler: 0 | Bağlantılar: 0" />
+
+    <!-- Bottom Navigation Dock -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e2e8f0"
+        android:orientation="horizontal"
+        android:elevation="6dp">
+
+        <!-- 1. Add Node -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_nav_add"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#1d4ed8"
+                android:src="@android:drawable/ic_input_add"
+                android:contentDescription="Düğüm Ekle" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Düğüm"
+                android:textColor="#1e293b"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 2. Batch Add -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_nav_batch"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#b45309"
+                android:src="@android:drawable/ic_menu_agenda"
+                android:contentDescription="Çoklu Ekle" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Çoklu"
+                android:textColor="#78350f"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 3. Connect Existing Nodes -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_nav_connect"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#2563eb"
+                android:src="@android:drawable/ic_menu_share"
+                android:contentDescription="Bağla" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bağla"
+                android:textColor="#1e293b"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 4. Mode Toggle -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_nav_mode"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#cbd5e1"
+                android:src="@android:drawable/ic_menu_crop"
+                android:contentDescription="Kutu Seç" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kutu Seç"
+                android:textColor="#1e293b"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <!-- 5. Force Layout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_nav_layout"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#cbd5e1"
+                android:src="@android:drawable/ic_menu_sort_alphabetically"
+                android:contentDescription="Düzen" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Düzen"
+                android:textColor="#059669"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 6. Sample / Reset -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_nav_sample"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#cbd5e1"
+                android:src="@android:drawable/ic_menu_rotate"
+                android:contentDescription="Örnek" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Örnek"
+                android:textColor="#475569"
+                android:textSize="9sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
